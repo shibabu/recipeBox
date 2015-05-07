@@ -19,7 +19,7 @@
           = f.simple_fields_for :ingredients do |ingredient|
             = render 'ingredient_fields', f: ingredient
           .links
-            = link_to_add_association 'Add Ingredient', f, :ingredients, class: 'btn btn-default add-button'
+            = link_to_add_association 'Add Ingredient', f, :ingredients, class: 'btn btn-success add-button'
 
       .col-md-6
         %h3 Directions
@@ -27,7 +27,7 @@
           = f.simple_fields_for :directions do |direction|
             = render 'direction_fields', f: direction
           .links
-            = link_to_add_association 'Add Step', f, :directions, class: 'btn btn-default add-button'
+            = link_to_add_association 'Add Step', f, :directions, class: 'btn btn-success add-button'
 
   = f.button :submit, class: "btn btn-primary"
   = link_to 'Back', @recipe.new_record? ? root_path : @recipe, class: 'btn btn-default'
