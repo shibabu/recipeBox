@@ -1,0 +1,8 @@
+- @recipes.each_slice 3 do |recipes_slice|
+  .row
+    - recipes_slice.each do |recipe|
+      .col-md-4
+        .recipe
+          .image_wrapper
+            = link_to (image_tag recipe.image.url(:medium)), recipe
+          %h3= link_to recipe.title, recipe
