@@ -6,6 +6,7 @@
       #recipe_info
         %h1= @recipe.title
         %p.description= @recipe.description
+        %p= "Submitted by #{@recipe.user.email}" unless @recipe.user.nil?
 
   .row
     .col-md-6
@@ -24,6 +25,7 @@
 
   .row
     .col-md-12
-      = link_to 'Edit', edit_recipe_path, class: 'btn btn-default'
       = link_to 'Back', root_path, class: 'btn btn-default'
-      = link_to 'Delete', recipe_path, method: :delete, class: 'btn btn-danger pull-right', data: {confirm: 'You are about to delete the recipe'}
+      - if user_signed_in? && @recipe.user==current_user
+        = link_to 'Edit', edit_recipe_path, class: 'btn btn-default'
+        = link_to 'Delete', recipe_path, method: :delete, class: 'btn btn-danger pull-right', data: {confirm: 'You are about to delete the recipe'}
