@@ -33,6 +33,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 # Project gems
+gem 'devise'
 gem 'haml'
 gem 'simple_form'
 gem 'bootstrap-sass'

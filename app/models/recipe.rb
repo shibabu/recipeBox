@@ -7,6 +7,6 @@ class Recipe < ActiveRecord::Base
 
   validates :title, presence: true, length: {minimum: 8}
   validates :description, presence: true, length: {minimum: 15}
-  validates :image, presence: true
+  validates :image, presence: true, on: :create
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 end
